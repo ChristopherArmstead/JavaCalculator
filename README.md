@@ -1,1 +1,1 @@
-Hello! this project Calculator App written in java. The calculator will be able to basic arithmetic, algebra and some basic calculus.
+Hello! This project is a calculator desktop application written in Java. The calculator will be able to do basic arithmetic, algebra, and some basic calculus.
