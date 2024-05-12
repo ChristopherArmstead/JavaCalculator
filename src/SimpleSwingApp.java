@@ -62,58 +62,6 @@ public class SimpleSwingApp {
         greenpanel.setPreferredSize(new Dimension(frame.getContentPane().getWidth() - 200, frame.getContentPane().getHeight() /2));
         greenpanel.setBackground(Color.green);
 
-        JPanel Gonepanel = new JPanel(new FlowLayout());
-        Gonepanel.setBackground(Color.red);
-
-          JPanel Gtwopanel = new JPanel(new FlowLayout());
-        Gtwopanel.setBackground(Color.pink);
-
-          JPanel Gthreepanel = new JPanel(new FlowLayout());
-        Gthreepanel.setBackground(Color.blue);
-
-          JPanel Gfourpanel = new JPanel(new FlowLayout());
-        Gfourpanel.setBackground(Color.orange);
-
-          JPanel Gfivepanel = new JPanel(new FlowLayout());
-        Gfivepanel.setBackground(Color.orange);
-
-          JPanel Gsixpanel = new JPanel(new FlowLayout());
-        Gsixpanel.setBackground(Color.red);
-
-          JPanel Gsevenpanel = new JPanel(new FlowLayout());
-        Gsevenpanel.setBackground(Color.pink);
-
-          JPanel Geightpanel = new JPanel(new FlowLayout());
-        Geightpanel.setBackground(Color.blue);
-
-          JPanel Gninepanel = new JPanel(new FlowLayout());
-        Gninepanel.setBackground(Color.blue);
-
-          JPanel Gtenpanel = new JPanel(new FlowLayout());
-        Gtenpanel.setBackground(Color.orange);
-
-          JPanel Gelevenpanel = new JPanel(new FlowLayout());
-        Gelevenpanel.setBackground(Color.red);
-
-          JPanel Gtwelvepanel = new JPanel(new FlowLayout());
-        Gtwelvepanel.setBackground(Color.pink);
-
-        JPanel Gthirteenpanel = new JPanel(new FlowLayout());
-        Gthirteenpanel.setBackground(Color.pink);
-
-        JPanel Gfourteenpanel = new JPanel(new FlowLayout());
-        Gfourteenpanel.setBackground(Color.blue);
-
-        JPanel Gfifteenpanel = new JPanel(new FlowLayout());
-        Gfifteenpanel.setBackground(Color.orange);
-
-        JPanel Gsixteenpanel = new JPanel(new FlowLayout());
-        Gsixteenpanel.setBackground(Color.red);
-
-
-
-
-
 
         greenpanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
@@ -172,14 +120,12 @@ public class SimpleSwingApp {
         greenpanel.add(equal);
 
 
-         Gonepanel.add(b1);
+   
 
 
         frame.getContentPane().add(bluepanel,BorderLayout.EAST);
         frame.getContentPane().add(greenpanel,BorderLayout.SOUTH);
         frame.setJMenuBar(menuBar);
-
-
 
         // Set the frame size and make it visible
 
