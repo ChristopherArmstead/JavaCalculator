@@ -3,11 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class SimpleSwingApp {
-    public static int panelxpos (int pos, JPanel container){ return (container.getWidth() / 4) * pos; }
-    public static int panelxpos (int pos, JFrame container){ return (container.getWidth() / 4) * pos; }
 
-    public static int panelypos(int pos, JPanel container){return (container.getHeight() / 4) * pos;}
-    public static int panelypos(int pos, JFrame container){return (container.getHeight() / 4) * pos;}
+
     public static void main(String[] args) {
         // Ensure the GUI creation is done on the Event Dispatch Thread
         SwingUtilities.invokeLater(SimpleSwingApp::createAndShowGUI);
@@ -17,25 +14,26 @@ public class SimpleSwingApp {
     }
 
     private static void createAndShowGUI() {
- JFrame frame = new JFrame("Simple Swing Application");
+        JFrame frame = new JFrame("Simple Swing Application");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-JLabel label = new JLabel("Hello, Swing!");
-        JLabel label2 = new JLabel("this label two");
-        frame.getContentPane().add(label);
-        frame.getContentPane().add(label2);
-        frame.setLayout(null);
-        frame.setSize(1000, 700);
+
+
+        frame.setLayout(new BorderLayout());
+        frame.setSize(500, 500);
+
+
         frame.setVisible(true);
 
 
         // Create the window (JFrame) and specify the close operation
         JMenuBar menuBar = new JMenuBar();
 
-        JMenuItem item = new JMenuItem("Open");
-        JMenuItem item2 = new JMenuItem("Save");
+        JMenuItem OpenFile = new JMenuItem("Open");
+        JMenuItem SaveFile = new JMenuItem("Save");
         JMenu menu = new JMenu("File");
-        menu.add(item);
+        menu.add(OpenFile);
+        menu.add(SaveFile);
         menuBar.add(menu);
 
         JMenu menu2 = new JMenu("Edit");
@@ -51,15 +49,17 @@ JLabel label = new JLabel("Hello, Swing!");
 
         menuBar.add(new JMenu("Exit"));
 
+
         JPanel redpanel = new JPanel();
         redpanel.setBackground(Color.white);
         redpanel.setBorder(BorderFactory.createLoweredBevelBorder());
 
         JPanel bluepanel = new JPanel();
         bluepanel.setBackground(Color.blue);
-        bluepanel.setBorder(BorderFactory.createLineBorder(Color.black));
+          bluepanel.setPreferredSize(new Dimension(frame.getContentPane().getWidth() / 3 , frame.getContentPane().getHeight()));
 
         JPanel greenpanel = new JPanel();
+        greenpanel.setPreferredSize(new Dimension(frame.getContentPane().getWidth() - 200, frame.getContentPane().getHeight() /2));
         greenpanel.setBackground(Color.green);
 
         JPanel Gonepanel = new JPanel(new FlowLayout());
@@ -117,30 +117,13 @@ JLabel label = new JLabel("Hello, Swing!");
 
         greenpanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
-      //  frame.setSize(400, 400);
-        redpanel.setBounds(0,0,250,250);
-        bluepanel.setBounds(panelxpos(3,frame),0,frame.getWidth()/4,frame.getHeight()/2);
-        greenpanel.setBounds(0,frame.getHeight() /2,frame.getWidth(),frame.getHeight()/2);
 
-        Gonepanel.setBounds(panelxpos(0,greenpanel),panelypos(0,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gtwopanel.setBounds(panelxpos(1,greenpanel),panelypos(0,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gthreepanel.setBounds(panelxpos(2,greenpanel),panelypos(0,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gfourpanel.setBounds(panelxpos(3,greenpanel),panelypos(0,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
+        int height = menuBar.getHeight();
+        System.out.println(height);
 
-        Gfivepanel.setBounds(panelxpos(0,greenpanel),panelypos(1,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gsixpanel.setBounds(panelxpos(1,greenpanel),panelypos(1,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gsevenpanel.setBounds(panelxpos(2,greenpanel),panelypos(1,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Geightpanel.setBounds(panelxpos(3,greenpanel),panelypos(1,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
 
-        Gninepanel.setBounds(panelxpos(0,greenpanel),panelypos(2,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gtenpanel.setBounds(panelxpos(1,greenpanel),panelypos(2,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gelevenpanel.setBounds(panelxpos(2,greenpanel),panelypos(2,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gtwelvepanel.setBounds(panelxpos(3,greenpanel),panelypos(2,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
 
-        Gthirteenpanel.setBounds(panelxpos(0,greenpanel),panelypos(3,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gfourteenpanel.setBounds(panelxpos(1,greenpanel),panelypos(3,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gfifteenpanel.setBounds(panelxpos(2,greenpanel),panelypos(3,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
-        Gsixteenpanel.setBounds(panelxpos(3,greenpanel),panelypos(3,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
+
 
 
 
@@ -150,38 +133,54 @@ JLabel label = new JLabel("Hello, Swing!");
        // ImageIcon leftButtonIcon = new ImageIcon("C:\\Users\\chris\\untitled\\resources\\integral-mathematical-sign.gif");
         JButton b1  = new JButton("Intergral");
         b1.setBackground(Color.white);
-        b1.setHorizontalAlignment(SwingConstants.CENTER);
-        b1.setVerticalAlignment(SwingConstants.CENTER);
-        // Dimension b1Size = new Dimension(10, 5);
-        // b1.setSize(b1Size);
 
-         bluepanel.add(label);
-         greenpanel.setLayout(null);
-         greenpanel.add(Gonepanel);
-         greenpanel.add(Gtwopanel);
-         greenpanel.add(Gthreepanel);
-         greenpanel.add(Gfourpanel);
-         greenpanel.add(Gfivepanel);
-         greenpanel.add(Gsixpanel);
-         greenpanel.add(Gsevenpanel);
-         greenpanel.add(Geightpanel);
-         greenpanel.add(Gninepanel);
-         greenpanel.add(Gtenpanel);
-         greenpanel.add(Gelevenpanel);
-         greenpanel.add(Gtwelvepanel);
-         greenpanel.add(Gthirteenpanel);
-         greenpanel.add(Gthirteenpanel);
-         greenpanel.add(Gfourteenpanel);
-         greenpanel.add(Gfifteenpanel);
-         greenpanel.add(Gsixteenpanel);
+        JButton one = new JButton("1");
+        JButton two = new JButton("2");
+        JButton three = new JButton("3");
+        JButton four = new JButton("4");
+        JButton five = new JButton("5");
+        JButton six = new JButton("6");
+        JButton seven = new JButton("7");
+        JButton eight = new JButton("8");
+        JButton nine = new JButton("9");
+        JButton zero = new JButton("0");
+        JButton decimal = new JButton(".");
+        JButton derivative = new JButton("dy/dx");
+        JButton intergral = new JButton("intergral");
+        JButton parenthesis = new JButton("( )");
+        JButton Bracket = new JButton("[ ]");
+        JButton equal = new JButton("=");
+
+
+         greenpanel.setLayout(new GridLayout(4,4,10,10));
+
+        greenpanel.add(seven);
+        greenpanel.add(eight);
+        greenpanel.add(nine);
+        greenpanel.add(six);
+        greenpanel.add(five);
+        greenpanel.add(four);
+        greenpanel.add(three);
+        greenpanel.add(two);
+        greenpanel.add(one);
+        greenpanel.add(zero);
+        greenpanel.add(decimal);
+        greenpanel.add(derivative);
+        greenpanel.add(intergral);
+        greenpanel.add(parenthesis);
+        greenpanel.add(Bracket);
+        greenpanel.add(equal);
+
 
          Gonepanel.add(b1);
-        // frame.add(redpanel);
-         frame.add(bluepanel);
-         frame.add(greenpanel);
-         frame.setJMenuBar(menuBar);
 
-         //greenpanel.add(Gfirstpanel);
+
+        frame.getContentPane().add(bluepanel,BorderLayout.EAST);
+        frame.getContentPane().add(greenpanel,BorderLayout.SOUTH);
+        frame.setJMenuBar(menuBar);
+
+
+
         // Set the frame size and make it visible
 
     }
