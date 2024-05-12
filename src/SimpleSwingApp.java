@@ -3,13 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class SimpleSwingApp {
-    public static int panelxpos(int pos, JPanel container){
+    public static int panelxpos (int pos, JPanel container){ return (container.getWidth() / 4) * pos; }
+    public static int panelxpos (int pos, JFrame container){ return (container.getWidth() / 4) * pos; }
 
-        return (container.getWidth() / 4) * pos;
-    }
-    public static int panelypos(int pos, JPanel container){
-        return (container.getHeight() / 4) * pos;
-    }
+    public static int panelypos(int pos, JPanel container){return (container.getHeight() / 4) * pos;}
+    public static int panelypos(int pos, JFrame container){return (container.getHeight() / 4) * pos;}
     public static void main(String[] args) {
         // Ensure the GUI creation is done on the Event Dispatch Thread
         SwingUtilities.invokeLater(SimpleSwingApp::createAndShowGUI);
@@ -121,7 +119,7 @@ JLabel label = new JLabel("Hello, Swing!");
 
       //  frame.setSize(400, 400);
         redpanel.setBounds(0,0,250,250);
-        bluepanel.setBounds(250,0,250,250);
+        bluepanel.setBounds(panelxpos(3,frame),0,frame.getWidth()/4,frame.getHeight()/2);
         greenpanel.setBounds(0,frame.getHeight() /2,frame.getWidth(),frame.getHeight()/2);
 
         Gonepanel.setBounds(panelxpos(0,greenpanel),panelypos(0,greenpanel),greenpanel.getWidth()/4,greenpanel.getHeight()/4);
@@ -179,7 +177,7 @@ JLabel label = new JLabel("Hello, Swing!");
 
          Gonepanel.add(b1);
         // frame.add(redpanel);
-        // frame.add(bluepanel);
+         frame.add(bluepanel);
          frame.add(greenpanel);
          frame.setJMenuBar(menuBar);
 
