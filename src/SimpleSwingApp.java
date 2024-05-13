@@ -50,24 +50,26 @@ public class SimpleSwingApp {
         menuBar.add(new JMenu("Exit"));
 
 
-        JPanel redpanel = new JPanel();
-        redpanel.setBackground(Color.white);
-        redpanel.setBorder(BorderFactory.createLoweredBevelBorder());
+
 
         JPanel bluepanel = new JPanel();
+        bluepanel.setLayout(new GridLayout(5, 1));
         bluepanel.setBackground(Color.blue);
           bluepanel.setPreferredSize(new Dimension(frame.getContentPane().getWidth() / 3 , frame.getContentPane().getHeight()));
 
         JPanel greenpanel = new JPanel();
-        greenpanel.setPreferredSize(new Dimension(frame.getContentPane().getWidth() - 200, frame.getContentPane().getHeight() /2));
+        greenpanel.setLayout(new BorderLayout());
+       // greenpanel.setPreferredSize(new Dimension(frame.getContentPane().getWidth() - 200, frame.getContentPane().getHeight() /2));
         greenpanel.setBackground(Color.green);
 
+        JPanel orangepanel = new JPanel();
+        orangepanel.setLayout(new GridLayout(6,3));
+        orangepanel.setPreferredSize(new Dimension(greenpanel.getWidth() , frame.getContentPane().getHeight() /2 ));
+        orangepanel.setBackground(Color.orange);
 
-        greenpanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
+       // greenpanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
-        int height = menuBar.getHeight();
-        System.out.println(height);
 
 
 
@@ -99,32 +101,44 @@ public class SimpleSwingApp {
         JButton Bracket = new JButton("[ ]");
         JButton equal = new JButton("=");
 
-
-         greenpanel.setLayout(new GridLayout(4,4,10,10));
-
-        greenpanel.add(seven);
-        greenpanel.add(eight);
-        greenpanel.add(nine);
-        greenpanel.add(six);
-        greenpanel.add(five);
-        greenpanel.add(four);
-        greenpanel.add(three);
-        greenpanel.add(two);
-        greenpanel.add(one);
-        greenpanel.add(zero);
-        greenpanel.add(decimal);
-        greenpanel.add(derivative);
-        greenpanel.add(intergral);
-        greenpanel.add(parenthesis);
-        greenpanel.add(Bracket);
-        greenpanel.add(equal);
+        JButton plus = new JButton("+");
+        JButton minus = new JButton("-");
+        JButton multiply = new JButton("*");
+        JButton divide = new JButton("/");
+        JButton remainder = new JButton("%");
 
 
-   
+       //  greenpanel.setLayout(new GridLayout(4,4,10,10));
+        bluepanel.add(plus);
+        bluepanel.add(minus);
+        bluepanel.add(multiply);
+        bluepanel.add(divide);
+        bluepanel.add(remainder);
+
+        orangepanel.add(seven);
+        orangepanel.add(eight);
+        orangepanel.add(nine);
+        orangepanel.add(six);
+        orangepanel.add(five);
+        orangepanel.add(four);
+        orangepanel.add(three);
+        orangepanel.add(two);
+        orangepanel.add(one);
+        orangepanel.add(zero);
+        orangepanel.add(decimal);
+        orangepanel.add(derivative);
+        orangepanel.add(intergral);
+        orangepanel.add(parenthesis);
+        orangepanel.add(Bracket);
+        orangepanel.add(equal);
 
 
+
+
+        greenpanel.add(orangepanel,BorderLayout.SOUTH);
         frame.getContentPane().add(bluepanel,BorderLayout.EAST);
-        frame.getContentPane().add(greenpanel,BorderLayout.SOUTH);
+        frame.getContentPane().add(greenpanel,BorderLayout.CENTER);
+
         frame.setJMenuBar(menuBar);
 
         // Set the frame size and make it visible
