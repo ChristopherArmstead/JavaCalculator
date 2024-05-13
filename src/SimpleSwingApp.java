@@ -53,7 +53,7 @@ public class SimpleSwingApp {
 
 
         JPanel bluepanel = new JPanel();
-        bluepanel.setLayout(new GridLayout(5, 1));
+        bluepanel.setLayout(new GridLayout(6, 1));
         bluepanel.setBackground(Color.blue);
           bluepanel.setPreferredSize(new Dimension(frame.getContentPane().getWidth() / 3 , frame.getContentPane().getHeight()));
 
@@ -63,7 +63,7 @@ public class SimpleSwingApp {
         greenpanel.setBackground(Color.green);
 
         JPanel orangepanel = new JPanel();
-        orangepanel.setLayout(new GridLayout(6,3));
+        orangepanel.setLayout(new GridLayout(5,3));
         orangepanel.setPreferredSize(new Dimension(greenpanel.getWidth() , frame.getContentPane().getHeight() /2 ));
         orangepanel.setBackground(Color.orange);
 
@@ -108,12 +108,14 @@ public class SimpleSwingApp {
         JButton remainder = new JButton("%");
 
 
+
        //  greenpanel.setLayout(new GridLayout(4,4,10,10));
         bluepanel.add(plus);
         bluepanel.add(minus);
         bluepanel.add(multiply);
         bluepanel.add(divide);
         bluepanel.add(remainder);
+        bluepanel.add(equal);
 
         orangepanel.add(seven);
         orangepanel.add(eight);
@@ -130,7 +132,7 @@ public class SimpleSwingApp {
         orangepanel.add(intergral);
         orangepanel.add(parenthesis);
         orangepanel.add(Bracket);
-        orangepanel.add(equal);
+
 
 
 
